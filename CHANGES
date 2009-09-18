@@ -1,0 +1,4 @@
+25-09-07-1458
+	Add this method in IPersistance service abstract.
+		public ItemDescription[] load(File directory, boolean failthrow) throws IOException, MelusineException;
+		public void save(Item item, File repository)  throws IOException, MelusineException;
