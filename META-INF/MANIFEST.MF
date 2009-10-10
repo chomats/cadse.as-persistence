@@ -1,22 +1,18 @@
 Manifest-Version: 1.0
-Ant-Version: Apache Ant 1.7.0
-Created-By: envsam
-Export-Package: fr.imag.adele.fede.workspace.as.persistence;version="1
- .0.0"
-Bundle-ClassPath: .
-Bundle-Name: fr.imag.adele.cadse.as.workspace.persistence
-Bundle-Localization: plugin
-Bundle-Vendor: Adele/LIG/ Grenoble University, France
-Eclipse-LazyStart: false
-Bundle-Version: 2.2.1.qualifier
 Bundle-ManifestVersion: 2
-Bundle-Description: Bundle fr.imag.adele.cadse.as.workspace.persistenc
- e
-Bundle-SymbolicName: fr.imag.adele.cadse.as.workspace.persistence;sing
- leton:=true
-Import-Package: fr.imag.adele.cadse.core;version="1.0.0",
- fr.imag.adele.cadse.core.delta;version="1.0.0",
- fr.imag.adele.cadse.core.transaction;version="1.0.0",
- fr.imag.adele.fede.workspace.as.persistence;version="1.0.0",
+Bundle-Name: fr.imag.adele.cadse.as.workspace.persistence
+Bundle-SymbolicName: fr.imag.adele.cadse.as.workspace.persistence;singleton:=true
+Bundle-Vendor: Adele/LIG/ Grenoble University, France
+Bundle-Version: 2.2.1.qualifier
+Bundle-Localization: plugin
+Bundle-ClassPath: .
+Eclipse-LazyStart: false
+Export-Package: fr.imag.adele.fede.workspace.as.persistence;version="2.2.1"
+Import-Package: fr.imag.adele.cadse.core;version="2.2.1",
+ fr.imag.adele.cadse.core.delta;version="2.2.1",
+ fr.imag.adele.cadse.core.transaction;version="2.2.1",
+ fr.imag.adele.fede.workspace.as.persistence;version="2.2.1",
  org.eclipse.core.runtime
+Created-By: envsam
+Bundle-Description: Bundle fr.imag.adele.cadse.as.workspace.persistence
 
