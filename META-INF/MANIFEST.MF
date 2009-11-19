@@ -12,7 +12,6 @@ Import-Package: fr.imag.adele.cadse.core;version="2.2.1",
  fr.imag.adele.cadse.core.delta;version="2.2.1",
  fr.imag.adele.cadse.core.transaction;version="2.2.1",
  fr.imag.adele.fede.workspace.as.persistence;version="2.2.1",
- fr.imag.adele.packageinfo;version="1.0.0",
  org.eclipse.core.runtime
 Created-By: envsam
 Bundle-Description: Bundle fr.imag.adele.cadse.as.workspace.persistence
