@@ -26,7 +26,7 @@ import java.net.URL;
 import java.security.NoSuchAlgorithmException;
 
 import fr.imag.adele.cadse.core.CadseException;
-import fr.imag.adele.cadse.core.CompactUUID;
+import java.util.UUID;
 import fr.imag.adele.cadse.core.Item;
 import fr.imag.adele.cadse.core.ItemDescription;
 import fr.imag.adele.cadse.core.LogicalWorkspace;
@@ -256,7 +256,7 @@ public interface IPersistence {
 	 */
 	public void save(Item item, File repository) throws IOException, CadseException;
 
-	File getLocationSer(CompactUUID id);
+	File getLocationSer(UUID id);
 
 	File getLocation();
 
