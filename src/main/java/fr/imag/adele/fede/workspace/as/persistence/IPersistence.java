@@ -108,12 +108,31 @@ public interface IPersistence {
      *            the item
      * @param repository
      *            the repository
+     * Load.
+     *
+     * @param wl
+     *            the wl
+     * @param directory
+     *            the directory
+     * @param failthrow
+     *            the failthrow
+     *
+     * @return the item description[]
      *
      * @throws IOException
      *             Signals that an I/O exception has occurred.
      * @throws CadseException
      *             the melusine exception
      */
+    public Item[] load(LogicalWorkspace wl, boolean failthrow) throws CadseException;
+
+    /**
+     * Save.
+     *
+     * @param item
+     *            the item
+     * @param repository
+     *            the repository
     public void saveSer(Item item, File fileSer) throws CadseException;
 	/**
 	 * New method use the workspace notification to save.
@@ -131,6 +150,24 @@ public interface IPersistence {
 	 * @return the cadses version
 	 */
 	public int[] getCadsesVersion();
+
+     /**
+     * Load from persistence.
+     *
+     * @param wl
+     *            the wl
+     * @param url
+     *            the url
+     *
+     * @return the item description
+     *
+     * @throws IOException
+     *             Signals that an I/O exception has occurred.
+     * @throws CadseException
+     *             the melusine exception
+     */
+    public void saveSer(Item item, File fileSer) throws CadseException;
+
 
      /**
      * Load from persistence.
@@ -182,23 +219,6 @@ public interface IPersistence {
 	 * @return the item[]
 	 */
 	public Item[] readOrphanRepository(LogicalWorkspace wl, File repository);
-
-	/**
-	 * Disable persistance.
-	 */
-	public void disablePersistance();
-
-	/**
-	 * Enable persistance.
-	 */
-	public void enablePersistance();
-
-	/**
-	 * Checks if is enable persistance.
-	 * 
-	 * @return true, if is enable persistance
-	 */
-	public boolean isEnablePersistance();
 
 	/**
 	 * Start listener.
@@ -299,6 +319,5 @@ public interface IPersistence {
 
 	void save(Item[] items) throws FileNotFoundException, NoSuchAlgorithmException, IOException;
 
-	void saveAll();
 
 }
