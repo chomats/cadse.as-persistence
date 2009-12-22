@@ -26,10 +26,12 @@ import java.net.URL;
 import java.security.NoSuchAlgorithmException;
 
 import fr.imag.adele.cadse.core.CadseException;
+import fr.imag.adele.cadse.core.CadseRuntime;
 import java.util.UUID;
 import fr.imag.adele.cadse.core.Item;
 import fr.imag.adele.cadse.core.ItemDescription;
 import fr.imag.adele.cadse.core.LogicalWorkspace;
+import java.util.List;
 import fr.imag.adele.cadse.core.transaction.delta.ItemDelta;
 import fr.imag.adele.cadse.core.transaction.LogicalWorkspaceTransaction;
 
@@ -38,28 +40,22 @@ import fr.imag.adele.cadse.core.transaction.LogicalWorkspaceTransaction;
  */
 public interface IPersistence {
 
-	/**
-	 * @generated
-	 */
-	String	AS_ID	= "AS.Workspace.Persistence";
+    /**
+     * Exist persistance.
+     *
+     * @return true, if successful
+     */
+    boolean existPersistence();
 
-	/**
-	 * Exist persistance.
-	 * 
-	 * @param location
-	 *            the location
-	 * 
-	 * @return true, if successful
-	 */
-	boolean existPersistance(String location);
+    /**
+     * Save.
+     */
+    void saveAll();
 
-	/**
-	 * Exist persistance.
-	 * 
-	 * @return true, if successful
-	 */
-	boolean existPersistance();
-
+    /**
+     * Delete.
+     */
+    void deleteAll();
 	// /**
 	// * Reload.
 	// *
@@ -88,7 +84,15 @@ public interface IPersistence {
 	 * Save.
 	 */
 	void save();
+    public String[] getRunningCadsesName();
 
+    /**
+     * Gets the cadses version.
+     *
+     * @return the cadses version
+     */
+    public int[] getRunningCadsesVersion();
+	
 	// void save(Item item) throws Throwable;
 
 	/**
@@ -96,6 +100,21 @@ public interface IPersistence {
 	 */
 	void delete();
 
+    public CadseRuntime[] getRunningCadses( );
+    /**
+     * Save.
+     *
+     * @param item
+     *            the item
+     * @param repository
+     *            the repository
+     *
+     * @throws IOException
+     *             Signals that an I/O exception has occurred.
+     * @throws CadseException
+     *             the melusine exception
+     */
+    public void saveSer(Item item, File fileSer) throws CadseException;
 	/**
 	 * New method use the workspace notification to save.
 	 * 
@@ -113,6 +132,22 @@ public interface IPersistence {
 	 */
 	public int[] getCadsesVersion();
 
+     /**
+     * Load from persistence.
+     *
+     * @param wl
+     *            the wl
+     * @param url
+     *            the url
+     *
+     * @return the item description
+     *
+     * @throws IOException
+     *             Signals that an I/O exception has occurred.
+     * @throws CadseException
+     *             the melusine exception
+     */
+    public Item[] loadFromPersistence(LogicalWorkspace lw, List<URL> url) throws CadseException;
 	// public String getWorkspaceTypeName();
 
 	// /**
