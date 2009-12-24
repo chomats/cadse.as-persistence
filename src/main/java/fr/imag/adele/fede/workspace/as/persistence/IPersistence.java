@@ -293,7 +293,7 @@ public interface IPersistence {
 	 * @throws CadseException
 	 *             the melusine exception
 	 */
-	public ItemDescription[] load(LogicalWorkspace wl, File directory, boolean failthrow) throws IOException,
+	public ItemDelta[] load(LogicalWorkspace wl, File directory, boolean failthrow) throws IOException,
 			CadseException;
 
 	/**
