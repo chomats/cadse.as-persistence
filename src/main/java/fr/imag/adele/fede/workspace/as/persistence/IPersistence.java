@@ -29,6 +29,7 @@ import fr.imag.adele.cadse.core.CadseException;
 import fr.imag.adele.cadse.core.CadseRuntime;
 
 import java.util.Collection;
+import java.util.Map;
 import java.util.UUID;
 import fr.imag.adele.cadse.core.Item;
 import fr.imag.adele.cadse.core.ItemDescription;
@@ -230,7 +231,7 @@ public interface IPersistence {
 	 * @throws CadseException
 	 *             the melusine exception
 	 */
-	public ItemDelta[] loadFromPersistence(LogicalWorkspaceTransaction transaction, Collection<URL> url) throws CadseException;
+	public ItemDelta[] loadFromPersistence(LogicalWorkspaceTransaction transaction, Map<UUID, URL> url) throws CadseException;
 
 	/**
 	 * Load from persistence.
