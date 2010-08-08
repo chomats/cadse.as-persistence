@@ -27,6 +27,8 @@ import java.security.NoSuchAlgorithmException;
 
 import fr.imag.adele.cadse.core.CadseException;
 import fr.imag.adele.cadse.core.CadseRuntime;
+
+import java.util.Collection;
 import java.util.UUID;
 import fr.imag.adele.cadse.core.Item;
 import fr.imag.adele.cadse.core.ItemDescription;
@@ -56,12 +58,6 @@ public interface IPersistence {
      * Delete.
      */
     void deleteAll();
-	// /**
-	// * Reload.
-	// *
-	// * @return true, if successful
-	// */
-	// boolean reload();
 
 	/**
 	 * Load.
@@ -185,28 +181,6 @@ public interface IPersistence {
      *             the melusine exception
      */
     public Item[] loadFromPersistence(LogicalWorkspace lw, List<URL> url) throws CadseException;
-	// public String getWorkspaceTypeName();
-
-	// /**
-	// * Restore item.
-	// *
-	// * @param item
-	// * the item
-	// * @param link
-	// * the link
-	// *
-	// * @throws Throwable
-	// * the throwable
-	// */
-	// public void restoreItem(Item item, Link link) throws Throwable;
-	//
-	// /**
-	// * Hidden item.
-	// *
-	// * @param item
-	// * the item
-	// */
-	// public void hiddenItem(Item item);
 
 	/**
 	 * Read orphan repository.
@@ -256,7 +230,7 @@ public interface IPersistence {
 	 * @throws CadseException
 	 *             the melusine exception
 	 */
-	public ItemDelta loadFromPersistence(LogicalWorkspaceTransaction transaction, URL url) throws CadseException;
+	public ItemDelta[] loadFromPersistence(LogicalWorkspaceTransaction transaction, Collection<URL> url) throws CadseException;
 
 	/**
 	 * Load from persistence.
